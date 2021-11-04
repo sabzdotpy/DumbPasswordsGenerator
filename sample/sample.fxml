@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.Tooltip?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<GridPane alignment="center" hgap="10" prefHeight="330.0" prefWidth="400.0" vgap="10" xmlns="http://javafx.com/javafx/8.0.202" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <columnConstraints>
+      <ColumnConstraints />
+   </columnConstraints>
+   <rowConstraints>
+      <RowConstraints />
+   </rowConstraints>
+   <children>
+      <AnchorPane focusTraversable="true" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onMouseClicked="#copyPassword" prefHeight="290.0" prefWidth="520.0" style="-fx-background-color: #2c2c2c;">
+         <children>
+            <Label fx:id="password_display" alignment="CENTER" contentDisplay="CENTER" layoutX="109.0" layoutY="39.0" maxHeight="-Infinity" onMousePressed="#copyPassword" prefHeight="62.0" prefWidth="303.0" style="-fx-background-color: #2e2e2e; -fx-background-radius: 15px;" text="Password will appear here" textAlignment="CENTER" textFill="#d3d3d3" wrapText="true">
+               <effect>
+                  <Glow />
+               </effect>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <padding>
+                  <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+               </padding>
+               <tooltip>
+                  <Tooltip text="click to copy password" />
+               </tooltip>
+            </Label>
+            <HBox alignment="CENTER" layoutX="37.0" layoutY="126.0" prefHeight="46.0" prefWidth="455.0" spacing="30.0">
+               <children>
+                  <CheckBox fx:id="upper_cbox" mnemonicParsing="false" text="Uppercase" textFill="#c3c0c0">
+                     <tooltip>
+                        <Tooltip text="include uppercase letters" />
+                     </tooltip></CheckBox>
+                  <CheckBox fx:id="nums_cbox" mnemonicParsing="false" text="Numbers" textFill="#c3c0c0">
+                     <tooltip>
+                        <Tooltip text="include numbers" />
+                     </tooltip></CheckBox>
+                  <CheckBox fx:id="syms_cbox" mnemonicParsing="false" text="Symbols" textFill="#c3c0c0">
+                     <tooltip>
+                        <Tooltip text="include symbols" />
+                     </tooltip></CheckBox>
+                  <VBox alignment="CENTER" prefHeight="200.0" prefWidth="100.0" spacing="5.0">
+                     <children>
+                        <Label text="Password Length" textFill="#c9c9c9" />
+                        <Spinner fx:id="sp" editable="true" />
+                     </children>
+                  </VBox>
+               </children>
+            </HBox>
+            <Button fx:id="gen_btn" layoutX="200.0" layoutY="212.0" mnemonicParsing="false" onAction="#btnClicked" prefHeight="46.0" prefWidth="129.0" style="-fx-background-radius: 10px; -fx-background-color: #454545; -fx-border-color: #a2a2a2; -fx-border-radius: 10px;" text="Generate" textFill="#e8e8e8">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <effect>
+                  <Glow level="0.17" />
+               </effect>
+            </Button>
+            <Hyperlink fx:id="url" layoutX="430.0" layoutY="258.0" onAction="#openURL" text="Made by Sabz" />
+         </children></AnchorPane>
+   </children>
+</GridPane>
